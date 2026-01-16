@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="QS-DPDP Operating System" Language="1033" 
+             Version="1.0.0" Manufacturer="NeurQ" UpgradeCode="YOUR-UPGRADE-CODE-GUID">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+        
+        <MajorUpgrade DowngradeErrorMessage="A newer version of QS-DPDP OS is already installed." />
+        
+        <MediaTemplate />
+        
+        <Feature Id="ProductFeature" Title="QS-DPDP OS" Level="1">
+            <ComponentGroupRef Id="ProductComponents" />
+            <ComponentGroupRef Id="JREComponents" />
+            <ComponentGroupRef Id="NativeComponents" />
+        </Feature>
+        
+        <Feature Id="QSDPDPCore" Title="QS-DPDP Core" Level="1">
+            <ComponentGroupRef Id="CoreComponents" />
+        </Feature>
+        
+        <Feature Id="QSSIEM" Title="QS-SIEM" Level="1">
+            <ComponentGroupRef Id="SIEMComponents" />
+        </Feature>
+        
+        <Feature Id="QSDLP" Title="QS-DLP" Level="1">
+            <ComponentGroupRef Id="DLPComponents" />
+        </Feature>
+        
+        <Feature Id="QSPIIScanner" Title="QS-PII Scanner" Level="1">
+            <ComponentGroupRef Id="PIIComponents" />
+        </Feature>
+        
+        <Feature Id="PolicyEngine" Title="Policy Engine" Level="1">
+            <ComponentGroupRef Id="PolicyComponents" />
+        </Feature>
+        
+        <UI>
+            <UIRef Id="WixUI_InstallDir" />
+            <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg" Order="2">1</Publish>
+            <Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">1</Publish>
+            <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2">LicenseAccepted = "1"</Publish>
+        </UI>
+        
+        <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+        
+        <SetDirectory Id="INSTALLFOLDER" Value="[ProgramFiles64Folder]NeurQ\QS-DPDP-OS" />
+        
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="INSTALLFOLDER" Name="QS-DPDP-OS">
+                    <ComponentGroup Id="ProductComponents">
+                        <Component Id="MainExecutable" Directory="INSTALLFOLDER">
+                            <File Id="MainExe" Source="..\..\target\qs-dpdp-os.exe" KeyPath="yes" />
+                        </Component>
+                        <Component Id="ConfigFile" Directory="INSTALLFOLDER">
+                            <File Id="Config" Source="config.properties" KeyPath="yes" />
+                        </Component>
+                    </ComponentGroup>
+                    
+                    <ComponentGroup Id="CoreComponents">
+                        <Component Id="CoreJar" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-dpdp-core\target\qs-dpdp-core-1.0.0.jar" />
+                        </Component>
+                    </ComponentGroup>
+                    
+                    <ComponentGroup Id="SIEMComponents">
+                        <Component Id="SIEMJar" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-siem\target\qs-siem-1.0.0.jar" />
+                        </Component>
+                        <Component Id="SIEMNative" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-siem\target\release\qs-siem.dll" />
+                        </Component>
+                    </ComponentGroup>
+                    
+                    <ComponentGroup Id="DLPComponents">
+                        <Component Id="DLPJar" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-dlp\target\qs-dlp-1.0.0.jar" />
+                        </Component>
+                        <Component Id="DLPNative" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-dlp\target\release\qs-dlp.dll" />
+                        </Component>
+                    </ComponentGroup>
+                    
+                    <ComponentGroup Id="PIIComponents">
+                        <Component Id="PIIJar" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-pii-scanner\target\qs-pii-scanner-1.0.0.jar" />
+                        </Component>
+                        <Component Id="PIIPython" Directory="INSTALLFOLDER">
+                            <File Source="..\..\qs-pii-scanner\src\main\python\pii_scanner.py" />
+                        </Component>
+                    </ComponentGroup>
+                    
+                    <ComponentGroup Id="PolicyComponents">
+                        <Component Id="PolicyJar" Directory="INSTALLFOLDER">
+                            <File Source="..\..\policy-engine\target\policy-engine-1.0.0.jar" />
+                        </Component>
+                    </ComponentGroup>
+                </Directory>
+            </Directory>
+            
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="QS-DPDP OS">
+                    <Component Id="ApplicationShortcut" Directory="ApplicationProgramsFolder">
+                        <Shortcut Id="ApplicationStartMenuShortcut"
+                                  Name="QS-DPDP OS"
+                                  Description="Quantum-Safe DPDP Compliance Operating System"
+                                  Target="[INSTALLFOLDER]qs-dpdp-os.exe"
+                                  WorkingDirectory="INSTALLFOLDER"/>
+                        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                        <RegistryValue Root="HKCU" Key="Software\NeurQ\QS-DPDP-OS" 
+                                      Name="Installed" Type="integer" Value="1" KeyPath="yes"/>
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+    </Product>
+</Wix>

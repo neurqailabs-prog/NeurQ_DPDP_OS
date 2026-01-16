@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.neurq</groupId>
+    <artifactId>qs-dpdp-os</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>QS-DPDP Operating System</name>
+    
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <graalvm.version>23.1.0</graalvm.version>
+        <rust.version>1.75.0</rust.version>
+        <python.version>3.11</python.version>
+        <jackson.version>2.15.2</jackson.version>
+        <bouncycastle.version>1.77</bouncycastle.version>
+        <junit.version>5.10.0</junit.version>
+    </properties>
+    
+    <modules>
+        <module>common</module>
+        <module>licensing-engine</module>
+        <module>qs-dpdp-core</module>
+        <module>qs-siem</module>
+        <module>qs-dlp</module>
+        <module>qs-pii-scanner</module>
+        <module>policy-engine</module>
+    </modules>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpqc-jdk18on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

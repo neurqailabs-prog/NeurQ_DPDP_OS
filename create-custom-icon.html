@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QS-DPDP OS Icon Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        .icon-container {
+            width: 256px;
+            height: 256px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .quantum-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 3px, transparent 3px);
+            background-size: 50px 50px, 60px 60px, 40px 40px;
+            animation: float 10s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .qs-text {
+            font-size: 80px;
+            font-weight: bold;
+            background: linear-gradient(45deg, 
+                #4285f4 0%, 
+                #ea4335 25%, 
+                #fbbc04 50%, 
+                #34a853 75%, 
+                #4285f4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        .dpdp-text {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+        .ai-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 3;
+        }
+        .quantum-ring {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+        .quantum-ring::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            top: 7px;
+            left: 7px;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        canvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; color: white;">
+        <h1>QS-DPDP OS Icon Generator</h1>
+        <p>Quantum-Safe AI-Powered Icon</p>
+        
+        <div class="icon-container" id="iconContainer">
+            <div class="quantum-particles"></div>
+            <div class="quantum-ring"></div>
+            <div class="ai-badge">AI</div>
+            <div class="qs-text">QS</div>
+            <div class="dpdp-text">DPDP OS</div>
+        </div>
+        
+        <canvas id="iconCanvas" width="256" height="256"></canvas>
+        
+        <br>
+        <button class="download-btn" onclick="downloadIcon()">Download Icon (PNG)</button>
+        <button class="download-btn" onclick="downloadICO()">Download Icon (ICO)</button>
+    </div>
+
+    <script>
+        function drawIcon() {
+            const canvas = document.getElementById('iconCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 256, 256);
+            gradient.addColorStop(0, '#1e3c72');
+            gradient.addColorStop(0.5, '#2a5298');
+            gradient.addColorStop(1, '#7e22ce');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 256, 256);
+            
+            // Quantum particles
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            for(let i = 0; i < 20; i++) {
+                const x = Math.random() * 256;
+                const y = Math.random() * 256;
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Quantum ring
+            ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(128, 128, 100, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // QS Text with Google-like colors
+            ctx.font = 'bold 80px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Q - Blue
+            const qGradient = ctx.createLinearGradient(50, 100, 100, 150);
+            qGradient.addColorStop(0, '#4285f4');
+            qGradient.addColorStop(1, '#1a73e8');
+            ctx.fillStyle = qGradient;
+            ctx.fillText('Q', 90, 120);
+            
+            // S - Multi-color gradient
+            const sGradient = ctx.createLinearGradient(150, 100, 200, 150);
+            sGradient.addColorStop(0, '#ea4335');
+            sGradient.addColorStop(0.33, '#fbbc04');
+            sGradient.addColorStop(0.66, '#34a853');
+            sGradient.addColorStop(1, '#4285f4');
+            ctx.fillStyle = sGradient;
+            ctx.fillText('S', 166, 120);
+            
+            // DPDP OS text
+            ctx.font = 'bold 18px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText('DPDP OS', 128, 170);
+            
+            // AI badge
+            const aiGradient = ctx.createLinearGradient(200, 20, 240, 40);
+            aiGradient.addColorStop(0, '#667eea');
+            aiGradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = aiGradient;
+            ctx.fillRect(200, 10, 46, 20);
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 10px Arial';
+            ctx.fillText('AI', 223, 23);
+        }
+        
+        function downloadIcon() {
+            drawIcon();
+            const canvas = document.getElementById('iconCanvas');
+            const link = document.createElement('a');
+            link.download = 'QS-DPDP-OS-Icon.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function downloadICO() {
+            drawIcon();
+            const canvas = document.getElementById('iconCanvas');
+            // Convert to ICO format (simplified - would need proper ICO encoding)
+            const link = document.createElement('a');
+            link.download = 'QS-DPDP-OS-Icon.ico';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            alert('Note: This downloads as PNG. For true ICO format, use an online converter or icon tool.');
+        }
+        
+        // Draw on load
+        window.onload = drawIcon;
+    </script>
+</body>
+</html>

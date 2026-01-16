@@ -1,0 +1,107 @@
+========================================
+QS-DPDP OS - Executable File Paths
+========================================
+
+All executable files and their locations:
+
+========================================
+1. MAIN INSTALLER (RECOMMENDED)
+========================================
+
+Path: D:\NeurQ_DPDP_Cursor_15012026\QS-DPDP-OS-Installer.bat
+
+Description: Complete installer that installs everything
+Usage: Double-click to run, then press any key to install
+
+This is the MAIN installer file - run this to install the entire solution.
+
+========================================
+2. INSTALLER PACKAGE (FOR DISTRIBUTION)
+========================================
+
+Path: D:\NeurQ_DPDP_Cursor_15012026\QS-DPDP-OS-Installer-Package.zip
+
+Description: Complete installer package (ZIP file)
+Usage: Extract and run QS-DPDP-OS-Installer.bat inside
+
+Contains everything needed for installation on any system.
+
+========================================
+3. INSTALLED APPLICATION LAUNCHER
+========================================
+
+Path: C:\Users\HP\AppData\Local\NeurQ\QS-DPDP-OS\launch.bat
+
+Description: Main application launcher (after installation)
+Usage: Double-click to run the application
+
+This is the installed application launcher.
+
+========================================
+4. DESKTOP SHORTCUT
+========================================
+
+Path: C:\Users\HP\Desktop\QS-DPDP OS.lnk
+
+Description: Desktop shortcut to launch application
+Usage: Double-click to run
+
+This is the shortcut on your desktop.
+
+========================================
+5. PROJECT LAUNCHER (DEVELOPMENT)
+========================================
+
+Path: D:\NeurQ_DPDP_Cursor_15012026\run-application.bat
+
+Description: Development launcher (from project directory)
+Usage: Run from project directory
+
+For development/testing purposes.
+
+========================================
+6. QUICK BUILD EXECUTABLE
+========================================
+
+Path: D:\NeurQ_DPDP_Cursor_15012026\quick-build.bat
+
+Description: Quick build script
+Usage: Builds project quickly without Maven
+
+For building the project.
+
+========================================
+7. CREATE EXECUTABLES SCRIPT
+========================================
+
+Path: D:\NeurQ_DPDP_Cursor_15012026\create-executables.bat
+
+Description: Creates native executables
+Usage: Generates .exe files (requires GraalVM)
+
+For creating native executables.
+
+========================================
+QUICK REFERENCE
+========================================
+
+TO INSTALL ON ANY SYSTEM:
+   D:\NeurQ_DPDP_Cursor_15012026\QS-DPDP-OS-Installer.bat
+
+TO RUN AFTER INSTALLATION:
+   C:\Users\HP\Desktop\QS-DPDP OS.lnk
+   (or)
+   C:\Users\HP\AppData\Local\NeurQ\QS-DPDP-OS\launch.bat
+
+TO DISTRIBUTE:
+   D:\NeurQ_DPDP_Cursor_15012026\QS-DPDP-OS-Installer-Package.zip
+
+========================================
+FILE SIZES
+========================================
+
+QS-DPDP-OS-Installer.bat: ~8 KB
+QS-DPDP-OS-Installer-Package.zip: ~31 KB
+launch.bat: ~2 KB
+
+========================================

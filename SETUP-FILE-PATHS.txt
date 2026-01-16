@@ -1,0 +1,26 @@
+========================================
+QS-DPDP OS - Complete Setup File Paths
+========================================
+
+INDIVIDUAL PRODUCT SETUP FILES:
+========================================
+
+1. QS-DPDP Core:
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-QS-DPDP-Core.bat
+
+2. QS-SIEM:
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-QS-SIEM.bat
+
+3. QS-DLP:
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-QS-DLP.bat
+
+4. QS-PII Scanner:
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-QS-PII-Scanner.bat
+
+5. Policy Engine:
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-Policy-Engine.bat
+
+6. QS-DPDP OS (Complete Suite):
+   D:\NeurQ_DPDP_Cursor_15012026\installers\Setup-QS-DPDP-OS-Complete.bat
+
+========================================

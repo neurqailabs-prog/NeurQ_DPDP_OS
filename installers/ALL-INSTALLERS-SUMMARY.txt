@@ -1,0 +1,127 @@
+========================================
+QS-DPDP OS - All Windows Installers
+========================================
+
+INDIVIDUAL PRODUCT INSTALLERS:
+========================================
+
+1. QS-DPDP Core
+   File: installers\Setup-QS-DPDP-Core.bat
+   Installs: Core DPDP compliance engine
+   Desktop Icon: "QS-DPDP Core"
+   Location: %LOCALAPPDATA%\NeurQ\QS-DPDP-Core
+   Type: JavaFX Desktop Application
+
+2. QS-SIEM
+   File: installers\Setup-QS-SIEM.bat
+   Installs: Security Information & Event Management
+   Desktop Icon: "QS-SIEM"
+   Location: %LOCALAPPDATA%\NeurQ\QS-SIEM
+   Type: Rust + Java Desktop Application
+
+3. QS-DLP
+   File: installers\Setup-QS-DLP.bat
+   Installs: Data Loss Prevention
+   Desktop Icon: "QS-DLP"
+   Location: %LOCALAPPDATA%\NeurQ\QS-DLP
+   Type: Rust + Java Desktop Application
+
+4. QS-PII Scanner
+   File: installers\Setup-QS-PII-Scanner.bat
+   Installs: PII discovery and classification
+   Desktop Icon: "QS-PII Scanner"
+   Location: %LOCALAPPDATA%\NeurQ\QS-PII-Scanner
+   Type: Python + Java Desktop Application
+
+5. Policy Engine
+   File: installers\Setup-Policy-Engine.bat
+   Installs: Sector-wise DPDP policy management
+   Desktop Icon: "Policy Engine"
+   Location: %LOCALAPPDATA%\NeurQ\Policy-Engine
+   Type: JavaFX Desktop Application
+
+COMPLETE SUITE INSTALLER:
+========================================
+
+QS-DPDP OS Complete Suite
+   File: installers\Setup-QS-DPDP-OS-Complete.bat
+   Installs: ALL products as integrated holistic solution
+   Desktop Icon: "QS-DPDP OS"
+   Location: %LOCALAPPDATA%\NeurQ\QS-DPDP-OS
+   Type: Integrated JavaFX Desktop Application Suite
+
+   Includes:
+   - QS-DPDP Core (in core\ folder)
+   - QS-SIEM (in siem\ folder)
+   - QS-DLP (in dlp\ folder)
+   - QS-PII Scanner (in pii-scanner\ folder)
+   - Policy Engine (in policy-engine\ folder)
+
+FEATURES:
+========================================
+
+✅ Proper Windows Setup
+   - Installation wizard interface
+   - Progress indicators (8-12 steps)
+   - Error handling
+   - Component selection
+
+✅ Desktop Integration
+   - Desktop shortcut with custom icon
+   - Start Menu entry
+   - Windows registry registration
+   - Appears in Add/Remove Programs
+
+✅ Product-Specific
+   - Custom splash screen for each product
+   - Product-specific icon
+   - Individual launcher
+   - Isolated installation directory
+
+✅ Desktop-Based Applications
+   - All products launch as JavaFX desktop applications
+   - NOT browser-based
+   - Native Windows integration
+   - Professional enterprise UI
+   - Offline capable
+   - Air-gapped deployment ready
+
+INSTALLATION PROCESS:
+========================================
+
+For Individual Product:
+1. Navigate to installers folder
+2. Double-click product installer (e.g., Setup-QS-SIEM.bat)
+3. Follow installation wizard
+4. Product installed with desktop icon
+5. Launch from desktop shortcut
+
+For Complete Suite:
+1. Navigate to installers folder
+2. Double-click Setup-QS-DPDP-OS-Complete.bat
+3. Follow installation wizard
+4. All products installed as integrated suite
+5. Main desktop icon launches integrated application
+6. Individual products also available in Start Menu
+
+QUICK REFERENCE:
+========================================
+
+Individual Products:
+  installers\Setup-QS-DPDP-Core.bat
+  installers\Setup-QS-SIEM.bat
+  installers\Setup-QS-DLP.bat
+  installers\Setup-QS-PII-Scanner.bat
+  installers\Setup-Policy-Engine.bat
+
+Complete Suite:
+  installers\Setup-QS-DPDP-OS-Complete.bat
+
+All installers create:
+  ✅ Desktop shortcuts with custom icons
+  ✅ Product-specific splash screens
+  ✅ Desktop-based JavaFX applications
+  ✅ Windows registry entries
+  ✅ Uninstallers
+
+========================================

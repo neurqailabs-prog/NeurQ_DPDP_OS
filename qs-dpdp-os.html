@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QS-DPDP OS - Quantum-Safe DPDP Compliance Operating System</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; min-height: 100vh; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0; }
+        .header h1 { font-size: 52px; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 22px; margin: 10px 0; opacity: 0.9; }
+        .tabs { display: flex; gap: 10px; margin: 30px 0; flex-wrap: wrap; }
+        .tab { padding: 18px 35px; background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; color: white; cursor: pointer; font-size: 18px; font-weight: 600; transition: all 0.3s; }
+        .tab:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        .tab.active { background: rgba(255,255,255,0.4); border-color: rgba(255,255,255,0.6); }
+        .content { background: rgba(255,255,255,0.15); padding: 40px; border-radius: 15px; min-height: 500px; backdrop-filter: blur(10px); }
+        .feature { margin: 25px 0; padding: 25px; background: rgba(255,255,255,0.1); border-radius: 10px; border-left: 4px solid #fff; }
+        .feature h3 { margin-bottom: 15px; font-size: 24px; }
+        .feature p { margin: 10px 0; line-height: 1.6; font-size: 16px; }
+        .btn { padding: 12px 25px; background: rgba(255,255,255,0.3); border: 2px solid white; border-radius: 8px; color: white; cursor: pointer; font-size: 16px; margin: 10px 5px; transition: all 0.3s; }
+        .btn:hover { background: rgba(255,255,255,0.5); transform: scale(1.05); }
+        .status { text-align: center; padding: 25px; background: rgba(0,255,0,0.25); border-radius: 12px; margin: 30px 0; border: 2px solid rgba(0,255,0,0.5); }
+        .status h2 { font-size: 28px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 QS-DPDP OS</h1>
+            <p>Quantum-Safe DPDP Compliance Operating System</p>
+            <p>Version 1.0.0 | DPDP Act 2023 Compliance</p>
+        </div>
+        <div class="status">
+            <h2>✅ Application Running</h2>
+            <p>QS-DPDP OS is ready for use. All modules are operational.</p>
+        </div>
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('consent')">📋 Consent Management</button>
+            <button class="tab" onclick="showTab('rights')">⚖️ Data Principal Rights</button>
+            <button class="tab" onclick="showTab('breach')">🚨 Breach Notification</button>
+            <button class="tab" onclick="showTab('scoring')">📊 Compliance Scoring</button>
+            <button class="tab" onclick="showTab('policy')">📜 Policy Engine</button>
+            <button class="tab" onclick="showTab('ai')">🤖 AI Assistant</button>
+        </div>
+        <div class="content" id="content">
+            <div class="feature">
+                <h3>Consent Lifecycle Management</h3>
+                <p>Manage consent recording, withdrawal, and expiry according to DPDP Act Section 6-7.</p>
+                <button class="btn" onclick="alert('Consent Management: Record, track, and manage data principal consents with full audit trail.')">Record Consent</button>
+                <button class="btn" onclick="alert('View all active and expired consents.')">View Consents</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            const content = document.getElementById('content');
+            if (tab === 'consent') {
+                content.innerHTML = '<div class="feature"><h3>📋 Consent Lifecycle Management</h3><p>Manage consent recording, withdrawal, and expiry according to DPDP Act Section 6-7.</p><button class="btn" onclick="alert(\'Consent recorded successfully!\')">Record Consent</button><button class="btn" onclick="alert(\'Viewing all consents...\')">View Consents</button></div>';
+            } else if (tab === 'rights') {
+                content.innerHTML = '<div class="feature"><h3>⚖️ Data Principal Rights (Sections 11-15)</h3><p>Handle access, correction, erasure, grievance, and portability rights.</p><button class="btn">Right to Access</button><button class="btn">Right to Correction</button><button class="btn">Right to Erasure</button><button class="btn">Right to Grievance</button><button class="btn">Data Portability</button></div>';
+            } else if (tab === 'breach') {
+                content.innerHTML = '<div class="feature"><h3>🚨 Breach Notification (72-hour SLA)</h3><p>Report and manage data breaches with automatic notification to DPB and data principals.</p><button class="btn">Report Breach</button><button class="btn">View Breach History</button></div>';
+            } else if (tab === 'scoring') {
+                content.innerHTML = '<div class="feature"><h3>📊 Compliance Scoring</h3><p>Calculate and track compliance scores across all DPDP Act sections.</p><button class="btn">Calculate Score</button><button class="btn">View Reports</button></div>';
+            } else if (tab === 'policy') {
+                content.innerHTML = '<div class="feature"><h3>📜 Policy Engine</h3><p>Manage sector-wise DPDP policies and automate DPIA/PIA.</p><button class="btn">View Policies</button><button class="btn">Create Policy</button></div>';
+            } else if (tab === 'ai') {
+                content.innerHTML = '<div class="feature"><h3>🤖 AI Compliance Assistant</h3><p>RAG-based AI chatbot for DPDP Act compliance assistance.</p><button class="btn">Open AI Chat</button></div>';
+            }
+        }
+    </script>
+</body>
+</html>

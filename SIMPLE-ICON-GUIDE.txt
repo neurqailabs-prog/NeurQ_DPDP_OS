@@ -1,0 +1,71 @@
+========================================
+SIMPLE ICON FIX - GUARANTEED TO WORK
+========================================
+
+I've copied the icon file to your DESKTOP for easy access.
+
+========================================
+EASY METHOD (2 Minutes)
+========================================
+
+1. Look on your DESKTOP
+   You should see: "QS-DPDP OS.lnk" shortcut
+   You should also see: "QS-DPDP-Icon.ico" file
+
+2. RIGHT-CLICK on "QS-DPDP OS.lnk"
+
+3. Click "Properties"
+
+4. Click "Change Icon" button (at bottom of window)
+
+5. Click "Browse" button
+
+6. In the file browser, you're already on Desktop!
+   Just select: "QS-DPDP-Icon.ico"
+   (It's right there on your desktop!)
+
+7. Click "Open"
+
+8. Click "OK"
+
+9. Click "OK" again
+
+10. Press F5 on your desktop
+
+DONE! The icon should now appear!
+
+========================================
+WHY THIS WORKS
+========================================
+
+- Icon file is now on your desktop (easy to find)
+- No need to navigate to other folders
+- Direct manual application (Windows respects this)
+- Desktop refresh clears cache
+
+========================================
+ICON FILE LOCATIONS
+========================================
+
+On your DESKTOP:
+   QS-DPDP-Icon.ico  ← Use this one!
+
+Original location:
+   D:\NeurQ_DPDP_Cursor_15012026\QS-DPDP-OS-Icon.ico
+
+Both are the same file - use whichever is easier!
+
+========================================
+IF STILL NOT WORKING
+========================================
+
+The icon file might need to be in ICO format.
+Try this:
+
+1. Open: create-custom-icon.html (in browser)
+2. Download the icon
+3. Use online converter: https://convertio.co/png-ico/
+4. Save as ICO format
+5. Apply using steps above
+
+========================================
