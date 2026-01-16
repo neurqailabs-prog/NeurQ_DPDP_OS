@@ -1,0 +1,82 @@
+# Build artifacts
+target/
+build/
+dist/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.bak
+*~
+*.swp
+*.swo
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Compiled Rust
+**/target/
+**/Cargo.lock
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+
+# Node modules (if any)
+node_modules/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Installer outputs
+installer/output/
+*.exe
+*.msi
+*.dmg
+*.deb
+*.rpm
+
+# Personal/license files
+license.neurq
+*.key
+*.pem
